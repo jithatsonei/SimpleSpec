@@ -23,9 +23,9 @@ jobs:
         with:
           name: net7.0-artifacts
           path: |
-            bin/Debug/net7.0/publish/SimpleSpec.deps.json
-            bin/Debug/net7.0/publish/SimpleSpec.dll
-            bin/Debug/net7.0/publish/SimpleSpec.pdb
+            SimpleSpec/bin/Debug/net7.0/publish/SimpleSpec.deps.json
+            SimpleSpec/bin/Debug/net7.0/publish/SimpleSpec.dll
+            SimpleSpec/bin/Debug/net7.0/publish/SimpleSpec.pdb
 
   release:
     needs: build
