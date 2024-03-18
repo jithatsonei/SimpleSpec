@@ -32,10 +32,9 @@ public class SimpleSpec : BasePlugin
     [CommandHelper(minArgs: 1, usage: "[name or ID]", whoCanExecute: CommandUsage.CLIENT_ONLY)]
     public void OnSpecCommand(CCSPlayerController? player, CommandInfo commandInfo)
     {
-        var target = GetTarget(commandInfo);
-        var playerTarget = target.Players.First();
         if (player.IsValid != true || player.PawnIsAlive != false) return;
-        commandInfo.ReplyToCommand($"Now spectating: {playerTarget.PlayerName}.");
-        player.ExecuteClientCommand($"spec_player #{playerTarget.UserId}");
+        var target = GetTarget(commandInfo);
+        commandInfo.ReplyToCommand($"Now spectating: {target.Players.First().PlayerName}.");
+        player.ExecuteClientCommand($"spec_player #{target.Players.First().UserId}");
     }
 }
